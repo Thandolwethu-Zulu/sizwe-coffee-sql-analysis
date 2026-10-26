@@ -5,6 +5,8 @@
 **Environment & Dialect:** Databricks SQL   
 **Database:** Sizwe Coffee Dataset (`Sizwe_Coffee_Dataset_1`)  
 
+
+
 ## 1. Project Overview
 
 ### Business Context
@@ -121,4 +123,10 @@ Ahead of the FY2025 year-end review meeting, **Nomsa Dlamini** (Financial Direct
 ### 7. Why Gross Margin Fell from 34.7% to 33.0% (Task 8)
 * **Pure Product Mix Shift (Simpson's Paradox):** Individual product line margins did **not** decline—every single line held a virtually flat margin across FY2024 and FY2025 (`Bulk Commercial`: **19.89%** vs. **19.91%**; `House Blend`: **38.32%** vs. **38.34%**; `Single Origin`: **44.24%** vs. **44.31%**; `Capsules`: **39.01%** vs. **38.79%**; `Decaf`: **35.85%** vs. **35.81%**).
 * Instead, 100% of Sizwe's top-line expansion came from **Bulk Commercial** (the lowest-margin line at **19.91%**), which surged by **46.37%** from **R110,338,581.35** (**25.02%** of total revenue) in FY2024 to **R161,500,249.66** (**33.65%** of total revenue) in FY2025.
-* At the same time, all four higher-margin product lines (carrying **35.8%–44.3%** margins) experienced slight revenue contractions and lost share of total revenue (`House Blend` share fell from **32.14%** to **28.71%**; `Single Origin` fell from **19.45%** to **17.57%**; `Capsules` fell from **12.88%** to **10.84%**; `Decaf` fell from **10.50%** to **9.24%**). Replacing 8.63 percentage points of high-margin revenue share with a 19.91%-margin bulk product pulled the company-wide weighted gross margin down by 1.7 percentage points.
+* At the same time, all four higher-margin product lines (carrying **35.8%–44.3%** margins) experienced slight revenue contractions and lost share of total revenue (`House Blend` share fell from **32.14%** to **28.71%**; `Single Origin` fell from **19.45%** to **17.57%**; `Capsules` fell from **12.88%** to **10.84%**; `Decaf` fell from **10.50%** to **9.24%**). Replacing 8.63 percentage points of high-margin revenue share with a 19.91%-margin bulk product pulled the company-wide weighted gross margin down by 1.7 percentage point.
+## Conclusion
+This project demonstrates how SQL can be used to transform business data into useful information for financial and commercial decision-making.
+
+By analysing revenue, profitability, invoice collections, customer accounts, trade promotions and sales performance, the project aims to identify business trends and areas requiring further investigation.
+
+The final conclusions and recommendations will be based on the results produced by the SQL queries.
