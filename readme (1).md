@@ -2,14 +2,14 @@
 
 **Course:** SQL Fundamentals (Witle Plus / Witle Technologies)  
 **Author:** Junior Data Analyst  
-**Environment & Dialect:** Databricks SQL (PostgreSQL / DuckDB Compatible)  
+**Environment & Dialect:** Databricks SQL   
 **Database:** Sizwe Coffee Dataset (`Sizwe_Coffee_Dataset_1`)  
 
 ## 1. Project Overview
 
 ### Business Context
 
-**Sizwe Coffee (Pty) Ltd** is a South African coffee roastery and wholesale supplier headquartered in Isando, Johannesburg, with a secondary distribution centre in Epping, Cape Town. The company roasts green beans and sells to 1,400 business customers across South Africa—grocery chains, restaurant groups, independent cafés, hotel groups, and corporate offices. Sizwe Coffee does not own retail storefronts.
+**Sizwe Coffee (Pty) Ltd** is a South African coffee roastery and wholesale supplier headquartered in Isando, Johannesburg, with a secondary distribution centre in Epping, Cape Town. The company roasts green beans and sells to 1,400 business customers across South Africa—grocery chains, restaurant groups, independent cafés, hotel groups, and corporate offices. Sizwe Coffee does not own retail storefronts.The purpose of this project is to analyse the company's sales performance, profitability, customer accounts, invoice collections and sales representative performance to support business decision-making.
 
 Across the two financial years covered in the dataset (**1 July 2023 to 30 June 2025**), the company achieved strong top-line growth:
 
@@ -66,27 +66,24 @@ Ahead of the FY2025 year-end review meeting, **Nomsa Dlamini** (Financial Direct
 
 ## 4. How to Run & Reproduce
 
-### Option A: Running in Databricks
+###  Running in Databricks
 
-1. **Upload the CSV Files:**
-   * In your Databricks workspace, click **+ New** → **Add or upload data** → **Create or modify table**.
-   * Upload the CSV files from `Sizwe_Coffee_Dataset_1/data/` (`sizwe_customers.csv`, `sizwe_products.csv`, `sizwe_sales_orders.csv`, `sizwe_sales_lines.csv`, `sizwe_ar_ledger.csv`, `sizwe_reps.csv`, `sizwe_trade_promotions.csv`) into your target schema.
-   * Either name the tables `customers`, `products`, `sales_orders`, `sales_lines`, `ar_ledger`, `reps`, and `trade_promotions` during upload, or run the `CREATE OR REPLACE TEMP VIEW` block at the top of `queries.sql` to alias the `sizwe_*` table names automatically.
-2. **Execute the Queries:**
-   * Open **SQL Editor** (or a SQL Notebook), paste `queries.sql`, and click **Run All**.
-3. **Push to GitHub:**
-   * Connect your GitHub repository under **Workspace** → **Git Folders (Repos)**, or upload `queries.sql` and `README.md` directly to your public GitHub repository via the GitHub web interface.
+1.Obtain access to the Sizwe Coffee dataset provided for the assignment.
 
-### Option B: Running in DuckDB or PostgreSQL
+2.Open the database in DuckDB or another compatible SQL environment.
 
-* **DuckDB CLI:**
-  ```bash
-  duckdb sizwe_coffee.duckdb -c ".read queries.sql"
-  ```
-* **PostgreSQL CLI:**
-  ```bash
-  psql -d sizwe_coffee -f queries.sql
-  ```
+3.Confirm that all required tables and columns are available.
+
+4.Open queries.sql.
+
+5.Execute the eight queries individually or in sequence.
+
+6.Review the result sets and verify the calculations.
+
+7.Compare the written answers using the actual query results.
+
+8.Review the Key Findings section below with the evidence from the analysis.
+
 
 ## 5. Key Insights & Verified Findings for Nomsa and Bongani
 
