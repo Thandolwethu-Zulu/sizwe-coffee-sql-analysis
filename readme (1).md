@@ -28,19 +28,20 @@ Ahead of the FY2025 year-end review meeting, **Nomsa Dlamini** (Financial Direct
 7. **Task 7 — The Shape of the Year:** Monthly revenue across all 24 months with month-on-month percentage change and a rolling three-month average.
 8. **Task 8 — Why Has the Margin Moved?:** Revenue, gross margin percentage, and share of total annual revenue per product line across FY2024 and FY2025 to explain why company-wide gross margin fell from 34.7% to 33.0%.
 
-## 2. Dataset Architecture & Entity Relationships
+## 2. Dataset
 
-| Table Name | CSV Source File | Rows | Key Columns Used | Primary / Foreign Keys |
-| :--- | :--- | :--- | :--- | :--- |
-| `customers` | `sizwe_customers.csv` | 1,400 | `customer_id`, `trading_name`, `channel`, `segment`, `province`, `credit_limit`, `payment_terms`, `rep_id` | `customer_id` (PK), `rep_id` (FK) |
-| `products` | `sizwe_products.csv` | 23 | `sku`, `product_name`, `product_line`, `pack_size`, `list_price`, `unit_cost` | `sku` (PK) |
-| `sales_orders` | `sizwe_sales_orders.csv` | 48,144 | `order_id`, `customer_id`, `order_date`, `delivery_date`, `rep_id`, `channel`, `status` | `order_id` (PK), `customer_id` (FK), `rep_id` (FK) |
-| `sales_lines` | `sizwe_sales_lines.csv` | 168,172 | `order_id`, `line_no`, `sku`, `units`, `unit_price`, `discount_pct`, `line_revenue`, `cogs` | `order_id` (FK), `sku` (FK) |
-| `ar_ledger` | `sizwe_ar_ledger.csv` | 48,144 | `customer_id`, `invoice_no`, `invoice_date`, `due_date`, `invoice_amount`, `amount_settled`, `settlement_date`, `payment_terms` | `invoice_no` (PK), `customer_id` (FK) |
-| `reps` | `sizwe_reps.csv` | 18 | `rep_id`, `rep_name`, `territory`, `hire_date`, `target_monthly` | `rep_id` (PK) |
-| `rep_visits` | `sizwe_rep_visits.csv` | 9,400 | `visit_id`, `rep_id`, `customer_id`, `visit_date`, `outcome` | `visit_id` (PK), `customer_id` (FK), `rep_id` (FK) |
-| `trade_promotions` | `sizwe_trade_promotions.csv` | 640 | `promo_id`, `customer_id`, `sku`, `start_date`, `end_date`, `mechanic`, `cost` | `promo_id` (PK), `customer_id` (FK), `sku` (FK) |
-| `vendors` | `sizwe_vendors.csv` | 74 | `vendor_id`, `vendor_name`, `vendor_type`, `payment_terms`, `is_foreign` | `vendor_id` (PK) |
+| Table Name | Rows | What It Holds |
+| :--- | :--- | :--- |
+| `customers` | 1,400 | One row per customer — trading name, channel, segment, province, credit limit, payment terms, and assigned sales representative. |
+| `products` | 23 | One row per SKU — product name, product line, pack size, list price, and unit cost. |
+| `sales_orders` | 48,144 | One row per order — customer, order date, delivery date, sales representative, channel, and order status. |
+| `sales_lines` | 168,172 | One row per order line — SKU, units, unit price, discount percentage, line revenue, and cost of goods (`cogs`). |
+| `ar_ledger` | 48,144 | One row per customer invoice — invoice date, due date, invoice amount, amount settled, settlement date, and payment terms. |
+| `reps` | 18 | Sales representatives — name, territory, hire date, and monthly revenue target (`target_monthly`). |
+| `rep_visits` | 9,400 | Visits made by sales representatives to customers, with the visit date and outcome. |
+| `trade_promotions` | 640 | Promotional support given to a customer on a SKU, including start/end dates, mechanic, and cost. |
+| `vendors` | 74 | Suppliers — vendor name, type, and payment terms. |
+
 
 ### How the Tables Connect
 
